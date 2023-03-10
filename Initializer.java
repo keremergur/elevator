@@ -14,7 +14,7 @@ public class Initializer {
     static ArrayList<Elevator> initializeElevators(int numElevators){
         ArrayList<Elevator> elevators = new ArrayList<>();
         for(int i = 0; i < numElevators; i++){
-            elevators.add(new Elevator(i+1, 0));
+            elevators.add(new Elevator(i+1));
         }
         return elevators;
     }

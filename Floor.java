@@ -2,6 +2,7 @@
 public class Floor {
 
     int floorNumber;
+    
     boolean waitingUp = false;
     boolean waitingDown = false;
 

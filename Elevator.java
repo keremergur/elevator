@@ -1,20 +1,39 @@
 
 import java.util.*;
 
-public class Elevator {
+public class Elevator extends Thread {
 
     int elevatorId;
-    int currentFloor;
+
+    Floor currentFloor;
+    Floor targetFloor;
+
+    boolean goingUp = false;
+    boolean goingDown = false;
 
     Map<Floor, Boolean> goingTo = Initializer.initializeFloorMap();
 
-    public Elevator(){
-        this(0, 0);
+    public Elevator(int elevatorId){
+        this(elevatorId, null);
     }
 
-    public Elevator(int elevatorId, int currentFloor){
+    public Elevator(int elevatorId, Floor currentFloor){
         this.elevatorId = elevatorId;
         this.currentFloor = currentFloor;
+        this.targetFloor = currentFloor;
+    }
+
+    @Override
+    public void run(){
+
+        while(true){
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
 }
