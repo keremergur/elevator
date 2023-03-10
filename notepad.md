@@ -6,6 +6,11 @@
 - Doors opening and closing
 - Failsafes
 
+## Function
+
+- Move elevator to floor called
+- Grab on the way if possible
+
 ## Possible issues
 
 - Blackout:
