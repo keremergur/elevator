@@ -23,6 +23,19 @@ public class Elevator extends Thread {
         this.targetFloor = currentFloor;
     }
 
+    void moveUp() throws Exception {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        int nextFloor = this.currentFloor.floorNumber + 1;
+        this.currentFloor = System.floors.get(nextFloor);
+        if(this.currentFloor.floorNumber != nextFloor){
+            throw new Exception();
+        }
+    }
+
     @Override
     public void run(){
 

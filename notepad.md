@@ -16,3 +16,7 @@
 - Blackout:
     - may reset Elevator.currentFloor
     - will forget to finish if interrupted
+
+## Mistakes
+
+- Thinking about multithreading before even implementing a move or call method
