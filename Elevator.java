@@ -23,13 +23,13 @@ public class Elevator extends Thread {
         this.targetFloor = currentFloor;
     }
 
-    void moveUp() throws Exception {
+    void move(Direction d) throws Exception {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        int nextFloor = this.currentFloor.floorNumber + 1;
+        int nextFloor = this.currentFloor.floorNumber + d.value;
         this.currentFloor = System.floors.get(nextFloor);
         if(this.currentFloor.floorNumber != nextFloor){
             throw new Exception();
@@ -49,4 +49,15 @@ public class Elevator extends Thread {
 
     }
 
+}
+
+enum Direction {
+    UP(1),
+    DOWN(-1);
+
+    public final int value;
+
+    private Direction(int value){
+        this.value = value;
+    }
 }
