@@ -1,9 +1,13 @@
 
 import java.util.*;
 
-public class System extends Thread {
+public class ElevatorSystem extends Thread {
 
-    static Queue<Floor> floorQueue = new LinkedList<>();
+    Queue<Floor> floorQueue = new LinkedList<>();
+
+    public ElevatorSystem(){
+
+    }
 
     @Override
     public void run(){
