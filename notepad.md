@@ -1,4 +1,12 @@
 
+## Structure
+
+- Simulator
+- Building
+    - FloorList
+    - ElevatorList
+    - ElevatorSystem 
+
 ## Realism
 
 - Elevator movement speed
@@ -20,3 +28,10 @@
 ## Mistakes
 
 - Thinking about multithreading before even implementing a move or call method
+
+## Extension
+
+- Individual elevators
+- Partial way elevators
+    - Could use new system
+        - Need to number floors differently
