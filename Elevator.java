@@ -5,13 +5,16 @@ public class Elevator extends Thread {
 
     int elevatorId;
 
+    List<Floor> floors;
+    ListIterator<Floor> iterator = floors.listIterator();
+
     Floor currentFloor;
     Floor targetFloor;
 
     boolean goingUp = false;
     boolean goingDown = false;
 
-    Map<Floor, Boolean> goingTo = Initializer.initializeFloorMap();
+    Map<Floor, Boolean> goingTo = Initializer.initializeFloorMap(this.floors);
 
     public Elevator(int elevatorId){
         this(elevatorId, null);
@@ -30,7 +33,7 @@ public class Elevator extends Thread {
             e.printStackTrace();
         }
         int nextFloor = this.currentFloor.floorNumber + d.value;
-        this.currentFloor = System.floors.get(nextFloor);
+        this.currentFloor = this.floors.get(nextFloor);
         if(this.currentFloor.floorNumber != nextFloor){
             throw new Exception();
         }
