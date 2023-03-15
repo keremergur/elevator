@@ -1,11 +1,11 @@
 
 import java.util.*;
 
-public class ElevatorSystem extends Thread {
+public class EVSystem extends Thread {
 
     Queue<Floor> floorQueue = new LinkedList<>();
 
-    public ElevatorSystem(){
+    public EVSystem(){
 
     }
 
