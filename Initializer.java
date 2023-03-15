@@ -3,25 +3,26 @@ import java.util.*;
 
 public class Initializer {
 
-    static ArrayList<Floor> initializeFloors(int numFloors){
-        ArrayList<Floor> floors = new ArrayList<>();
-        for(int i = 0; i < numFloors; i++){
+    static List<Floor> initializeFloors(int numFloors, int lowestNo){
+        List<Floor> floors = new ArrayList<>();
+        int roof = lowestNo+numFloors;
+        for(int i = lowestNo; i < roof; i++){
             floors.add(new Floor(i));
         }
         return floors;
     }
 
-    static ArrayList<Elevator> initializeElevators(int numElevators){
-        ArrayList<Elevator> elevators = new ArrayList<>();
+    static List<Elevator> initializeElevators(int numElevators){
+        List<Elevator> elevators = new ArrayList<>();
         for(int i = 0; i < numElevators; i++){
             elevators.add(new Elevator(i));
         }
         return elevators;
     }
 
-    static Map<Floor, Boolean> initializeFloorMap(){
+    static Map<Floor, Boolean> initializeFloorMap(List<Floor> floors){
         Map<Floor, Boolean> map = new HashMap<>();
-        for(Floor f : System.floors){
+        for(Floor f : floors){
             map.put(f, false);
         }
         return map;
