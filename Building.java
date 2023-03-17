@@ -11,9 +11,13 @@ public class Building {
     List<Elevator> elevators = Initializer.initializeElevators(this, numberOfElevators);
     EVSystem sys = new EVSystem(this);
 
-    public Building(int numberOfFloors, int numberOfElevators){
+    public Building(int numberOfFloors, int numberOfElevators) {
         this.numberOfFloors = numberOfFloors;
         this.numberOfElevators = numberOfElevators;
+    }
+
+    public void runEVSystem() {
+        sys.start();
     }
 
 }

@@ -12,6 +12,7 @@ public class Simulator {
 
         Building building = new Building(numFloors, numEvs);
 
+        building.runEVSystem();
         
     }
     
