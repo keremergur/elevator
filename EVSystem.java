@@ -3,10 +3,11 @@ import java.util.*;
 
 public class EVSystem extends Thread {
 
+    Building building;
     Queue<Floor> floorQueue = new LinkedList<>();
 
-    public EVSystem(){
-
+    public EVSystem(Building building){
+        this.building = building;
     }
 
     @Override
