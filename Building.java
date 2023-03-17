@@ -8,7 +8,7 @@ public class Building {
     int numberOfElevators;
 
     List<Floor> floors = Initializer.initializeFloors(numberOfFloors, lowestFloorNo);
-    List<Elevator> elevators = Initializer.initializeElevators(numberOfElevators);
+    List<Elevator> elevators = Initializer.initializeElevators(this, numberOfElevators);
 
     public Building(int numberOfFloors, int numberOfElevators){
         this.numberOfFloors = numberOfFloors;

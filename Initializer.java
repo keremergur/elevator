@@ -12,10 +12,10 @@ public class Initializer {
         return floors;
     }
 
-    static List<Elevator> initializeElevators(int numElevators){
+    static List<Elevator> initializeElevators(Building building, int numElevators){
         List<Elevator> elevators = new ArrayList<>();
         for(int i = 0; i < numElevators; i++){
-            elevators.add(new Elevator(i));
+            elevators.add(new Elevator(building, i));
         }
         return elevators;
     }
