@@ -9,6 +9,7 @@ public class Building {
 
     List<Floor> floors = Initializer.initializeFloors(numberOfFloors, lowestFloorNo);
     List<Elevator> elevators = Initializer.initializeElevators(this, numberOfElevators);
+    EVSystem sys = new EVSystem(this);
 
     public Building(int numberOfFloors, int numberOfElevators){
         this.numberOfFloors = numberOfFloors;
