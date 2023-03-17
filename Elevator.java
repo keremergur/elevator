@@ -13,7 +13,8 @@ public class Elevator extends Thread {
     boolean goingUp = false;
     boolean goingDown = false;
 
-    Map<Floor, Boolean> goingTo = Initializer.initializeFloorMap(this.building.floors);
+    Map<Floor, Boolean> goingTo = Initializer
+        .initializeFloorMap(this.building.floors);
 
     public Elevator(Building building, int elevatorId){
         this.building = building;
@@ -26,10 +27,15 @@ public class Elevator extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        int nextFloor = this.currentFloor.floorNumber + d.value;
-        this.currentFloor = this.building.floors.get(nextFloor);
-        if(this.currentFloor.floorNumber != nextFloor){
-            throw new Exception();
+        switch(d) {
+            case UP:
+                this.currentFloor = this.building
+                    .floorAbove(this.currentFloor);
+                break;
+            case DOWN:
+                this.currentFloor = this.building
+                    .floorBelow(this.currentFloor);
+                break;
         }
     }
 
