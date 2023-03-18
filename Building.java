@@ -19,7 +19,7 @@ public class Building {
     }
 
     public void runEVSystem() {
-        sys.start();
+        this.sys.start();
     }
     
     Floor getFloor(int floorNo) {
