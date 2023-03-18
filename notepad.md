@@ -24,6 +24,7 @@
 - Blackout:
     - may reset Elevator.currentFloor
     - will forget to finish if interrupted
+- Enum direction is package scoped
 
 ## Mistakes
 
