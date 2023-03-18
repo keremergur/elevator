@@ -19,13 +19,5 @@ public class Initializer {
         }
         return elevators;
     }
-
-    static Map<Floor, Boolean> initializeFloorMap(List<Floor> floors){
-        Map<Floor, Boolean> map = new HashMap<>();
-        for(Floor f : floors){
-            map.put(f, false);
-        }
-        return map;
-    }
     
 }
