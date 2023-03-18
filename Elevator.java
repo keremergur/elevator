@@ -13,8 +13,7 @@ public class Elevator extends Thread {
     boolean goingUp = false;
     boolean goingDown = false;
 
-    Map<Floor, Boolean> goingTo = Initializer
-        .initializeFloorMap(this.building.floors);
+    Set<Floor> goingTo = new HashSet<>();
 
     public Elevator(Building building, int elevatorId){
         this.building = building;
