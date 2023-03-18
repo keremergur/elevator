@@ -36,6 +36,8 @@ public class Elevator extends Thread {
                 this.currentFloor = this.building
                     .floorBelow(this.currentFloor);
                 break;
+            default:
+                throw new Exception();
         }
     }
 
