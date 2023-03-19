@@ -1,5 +1,7 @@
 
 import java.util.*;
+import java.math.*;
+import java.util.stream.Collectors;
 
 public class Building {
 
@@ -36,6 +38,17 @@ public class Building {
         int i = this.floors.indexOf(f);
         if(i <= 0) return null;
         return this.floors.get(i - 1);
+    }
+
+    Elevator nearestFreeElevator(Floor f) {
+        int targetFloorNo = f.floorNumber;
+        return this.elevators.stream()
+            // filter ev in use
+            .min((a,b) -> 
+                    (Math.abs(targetFloorNo - a.currentFloor.floorNumber))
+                    -
+                    (Math.abs(targetFloorNo - b.currentFloor.floorNumber))
+                ).get();
     }
 
 }
