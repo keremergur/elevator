@@ -1,7 +1,6 @@
 
 import java.util.*;
-import java.math.*;
-import java.util.stream.Collectors;
+
 
 public class Building {
 
