@@ -29,12 +29,12 @@ public class Elevator extends Thread {
         if(d == Direction.HALT) return;
         Floor nextFloor = building.adjacentFloor(currentFloor, d);
         if(nextFloor.waiting(d)) {
-            this.comeToHalt();
+            this.slowDownToHalt();
         }
         this.currentFloor = nextFloor;
     }
 
-    void comeToHalt() {}
+    void slowDownToHalt() {}
 
     @Override
     public void run(){
