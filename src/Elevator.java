@@ -31,6 +31,7 @@ public class Elevator extends Thread {
         if(nextFloor.waiting(d)) {
             this.comeToHalt();
         }
+        this.currentFloor = nextFloor;
     }
 
     void comeToHalt() {}
