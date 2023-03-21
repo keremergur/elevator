@@ -39,7 +39,7 @@ public class Building {
     Elevator nearestFreeElevator(Floor f) {
         int targetFloorNo = f.floorNumber;
         return this.elevators.stream()
-            // filter ev in use
+            .filter(x -> x.going == Direction.HALT)
             .min((a,b) -> 
                     (Math.abs(targetFloorNo - a.currentFloor.floorNumber))
                     -
