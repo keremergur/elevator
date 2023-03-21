@@ -21,15 +21,15 @@ public class Elevator extends Thread {
     }
 
     void move(Direction d) throws Exception {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         if(d == Direction.HALT) return;
         Floor nextFloor = building.adjacentFloor(currentFloor, d);
         if(nextFloor.waiting(d)) {
             this.slowDownToHalt();
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         this.currentFloor = nextFloor;
     }
