@@ -28,16 +28,12 @@ public class Building {
         return this.floors.get(floorNo - this.lowestFloorNo);
     }
 
-    Floor floorAbove(Floor f) {
+    Floor adjacentFloor(Floor f, Direction d) {
         int i = this.floors.indexOf(f);
-        if(i >= this.numberOfFloors - 1) return null;
-        return this.floors.get(i + 1);
-    }
-    
-    Floor floorBelow(Floor f) {
-        int i = this.floors.indexOf(f);
-        if(i <= 0) return null;
-        return this.floors.get(i - 1);
+        if((i <= 0 && d == Direction.DOWN)
+        || (i >= this.numberOfFloors - 1 && d == Direction.UP))
+            return null;
+        return this.floors.get(i + d.value);
     }
 
     Elevator nearestFreeElevator(Floor f) {
