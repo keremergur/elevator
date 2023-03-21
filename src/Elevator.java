@@ -11,8 +11,7 @@ public class Elevator extends Thread {
     Floor currentFloor;
     Floor targetFloor;
 
-    boolean goingUp = false;
-    boolean goingDown = false;
+    Direction going = Direction.HALT;
 
     Set<Floor> goingTo = new HashSet<>();
 
