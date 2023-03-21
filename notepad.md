@@ -29,6 +29,8 @@
 ## Mistakes
 
 - Thinking about multithreading before even implementing a move or call method
+- Classes concern themselves with what they can do
+    - move() does not decide if EV will stop
 
 ## Extension
 
