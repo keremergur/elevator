@@ -27,19 +27,13 @@ public class Elevator extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        switch(d) {
-            case UP:
-                this.currentFloor = this.building
-                    .floorAbove(this.currentFloor);
-                break;
-            case DOWN:
-                this.currentFloor = this.building
-                    .floorBelow(this.currentFloor);
-                break;
-            default:
-                throw new Exception();
+        Floor nextFloor = building.adjacentFloor(currentFloor, d);
+        if(nextFloor.waiting(d)) {
+            this.comeToHalt();
         }
     }
+
+    void comeToHalt() {}
 
     @Override
     public void run(){
