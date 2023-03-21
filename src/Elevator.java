@@ -27,6 +27,7 @@ public class Elevator extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        if(d == Direction.HALT) return;
         Floor nextFloor = building.adjacentFloor(currentFloor, d);
         if(nextFloor.waiting(d)) {
             this.comeToHalt();
