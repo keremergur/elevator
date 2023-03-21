@@ -9,15 +9,18 @@ public class Building {
     int numberOfFloors; // Including ground floor
     int numberOfElevators;
 
-    List<Floor> floors = Initializer
-        .initializeFloors(numberOfFloors, lowestFloorNo);
-    List<Elevator> elevators = Initializer
-        .initializeElevators(this, numberOfElevators);
-    EVSystem sys = new EVSystem(this);
+    List<Floor> floors;
+    List<Elevator> elevators;
+    EVSystem sys;
 
     public Building(int numberOfFloors, int numberOfElevators) {
         this.numberOfFloors = numberOfFloors;
         this.numberOfElevators = numberOfElevators;
+        this.floors = Initializer
+            .initializeFloors(numberOfFloors, lowestFloorNo);
+        this.elevators = Initializer
+            .initializeElevators(this, numberOfElevators);
+        this.sys = new EVSystem(this);
     }
 
     public void runEVSystem() {
