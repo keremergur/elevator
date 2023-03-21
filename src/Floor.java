@@ -19,4 +19,18 @@ public class Floor {
         this.waitingDown = true;
     }
 
+    boolean waiting(Direction d) {
+        switch(d) {
+            case UP:
+                if(waitingUp) return true;
+                break;
+            case DOWN:
+                if(waitingDown) return true;
+                break;
+            default:
+                throw new IllegalArgumentException("Illegal direction!");
+        }
+        return false;
+    }
+
 }
