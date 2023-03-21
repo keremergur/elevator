@@ -13,7 +13,7 @@ public class Elevator extends Thread {
 
     Direction going = Direction.HALT;
 
-    Set<Floor> goingTo = new HashSet<>();
+    Queue<Floor> goingTo = new LinkedList<>();
 
     public Elevator(Building building, int elevatorId){
         this.building = building;
