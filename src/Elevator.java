@@ -53,6 +53,7 @@ public class Elevator extends Thread {
 
 enum Direction {
     UP(1),
+    HALT(0),
     DOWN(-1);
 
     public final int value;
