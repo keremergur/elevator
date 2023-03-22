@@ -33,4 +33,17 @@ public class Floor {
         return false;
     }
 
+    void unWait(Direction d) {
+        switch(d) {
+            case UP:
+                waitingUp = false;
+                break;
+            case DOWN:
+                waitingDown = false;
+                break;
+            default:
+                throw new IllegalArgumentException("Illegal direction!");
+        }
+    }
+
 }

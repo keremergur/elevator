@@ -53,6 +53,9 @@ public class Elevator extends Thread {
             if(goingTo.contains(currentFloor)) {
                 goingTo.remove(currentFloor);
             }
+            if(currentFloor.waiting(heading)) {
+                currentFloor.unWait(heading);
+            }
         
         }
 
