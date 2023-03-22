@@ -39,4 +39,13 @@ public class Building {
         return this.floors.get(i + d.value);
     }
 
+    Direction directionFromTo(Floor current, Floor target) {
+        if(current == target) return Direction.HALT;
+        int diff = this.floors.indexOf(target) - this.floors.indexOf(current);
+        if(diff > 0) {
+            return Direction.UP;
+        }
+        return Direction.DOWN;
+    }
+
 }
