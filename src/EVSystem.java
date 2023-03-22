@@ -24,4 +24,15 @@ public class EVSystem extends Thread {
 
     }
 
+    Elevator nearestFreeElevator(Floor f) {
+        int targetFloorNo = f.floorNumber;
+        return this.building.elevators.stream()
+            .filter(x -> x.going == Direction.HALT)
+            .min((a,b) -> 
+                    (Math.abs(targetFloorNo - a.currentFloor.floorNumber))
+                    -
+                    (Math.abs(targetFloorNo - b.currentFloor.floorNumber))
+                ).get();
+    }
+
 }

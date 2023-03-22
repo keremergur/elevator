@@ -39,15 +39,4 @@ public class Building {
         return this.floors.get(i + d.value);
     }
 
-    Elevator nearestFreeElevator(Floor f) {
-        int targetFloorNo = f.floorNumber;
-        return this.elevators.stream()
-            .filter(x -> x.going == Direction.HALT)
-            .min((a,b) -> 
-                    (Math.abs(targetFloorNo - a.currentFloor.floorNumber))
-                    -
-                    (Math.abs(targetFloorNo - b.currentFloor.floorNumber))
-                ).get();
-    }
-
 }
