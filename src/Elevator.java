@@ -20,22 +20,6 @@ public class Elevator extends Thread {
         this.elevatorId = elevatorId;
     }
 
-    void move(Direction d) {
-        if(d == Direction.HALT) return;
-        Floor nextFloor = building.adjacentFloor(currentFloor, d);
-        if(nextFloor.waiting(d)) {
-            this.slowDownToHalt();
-        }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        currentFloor = nextFloor;
-    }
-
-    void slowDownToHalt() {}
-
     @Override
     public void run(){
 
@@ -60,6 +44,22 @@ public class Elevator extends Thread {
         }
 
     }
+
+    void move(Direction d) {
+        if(d == Direction.HALT) return;
+        Floor nextFloor = building.adjacentFloor(currentFloor, d);
+        if(nextFloor.waiting(d)) {
+            this.slowDownToHalt();
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        currentFloor = nextFloor;
+    }
+
+    void slowDownToHalt() {}
 
 }
 
