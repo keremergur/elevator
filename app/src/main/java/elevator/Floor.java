@@ -1,4 +1,4 @@
-package app.src.main.java.elevator;
+package elevator;
 
 public class Floor {
 
