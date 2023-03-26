@@ -1,4 +1,4 @@
-import src.Building;
+import app.src.main.java.elevator.Building;
 
 public class Simulator {
 
