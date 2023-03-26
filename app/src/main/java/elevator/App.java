@@ -4,11 +4,19 @@
 package elevator;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void main(String[] args){
+
+        if(args.length != 2){
+            throw new IllegalArgumentException();
+        }
+
+        int numFloors = Integer.parseInt(args[0]);
+        int numEvs = Integer.parseInt(args[1]);
+
+        Building building = new Building(numFloors, numEvs);
+
+        building.runEVSystem();
+        
     }
 }
